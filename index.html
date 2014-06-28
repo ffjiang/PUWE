@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en-US">
+		<title>Princeton University Wind Ensemble</title>
+	<!--	<base href="http://www.princeton.edu/~puwe/alpha/" /> -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link type="text/css" rel="stylesheet" href="styles/index.css" />
+		<link type="text/css" rel="stylesheet" media="screen and (max-width: 1091px)" href="styles/index.css" />
+		<link type="text/css" rel="stylesheet" media="screen and (min-width: 1092px)" href="styles/index.css" />
+
+		<link rel="icon" href="http://princeton.edu/~puwe/beta/wp-content/themes/expound/favicon.ico" />
+		<link rel='next' title='Events' href='http://princeton.edu/~puwe/alpha/events/' />
+		<link href='http://fonts.googleapis.com/css?family=EB+Garamond|Raleway:400' rel='stylesheet' type='text/css' />
+		<script type="text/javascript" src="scripts/jquery.js"></script>
+		<script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
+
+
+	</head>
+	<body>
+		<section id="page"> <!-- contains entire page -->
+			<h1 id="title"><a href="http://www.princeton.edu/~puwe/alpha/index.html" title="Princeton University Wind Ensemble" rel="index">Princeton University Wind Ensemble</a></h1>
+			<h2 id="title_description">Robert Gravener, Conductor</h2>
+
+			<div id="header">
+			
+			</div>
+
+			<div id="top_bar">
+			</div>
+
+			<div id="main">
+				<div id="iconholder">			
+
+					<div id="pirates_box">
+						<img id="pirates" src="images/pirates_icon.jpg" />
+					</div>
+					<iframe width="0" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113630796&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true"></iframe> <!--Pirates-->
+
+					<div id="american_elegy_box">
+						<img id="american_elegy" src="images/american_elegy_icon.jpg" />
+					</div>
+					<iframe width="0" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/125042818&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true"></iframe> <!--Ticheli -->
+
+					<div id="american_in_paris_box">
+						<img id="american_in_paris" src="images/american_in_paris_icon.jpg" />
+					</div>
+
+					<div id="lotr_box">
+						<img id="lotr" src="images/lotr_icon.jpg" />
+					</div>
+
+					<div id="star_wars_box">
+						<img id="star_wars" src="images/star_wars_icon.jpg" />
+					</div>
+
+				</div>
+
+				<div id="bio_box">
+					<div id="bio_1">
+						<img id="bio_1_photo" src="" />
+						<h1>Nicole Schiavone</h1>
+						<h3>President</h3>
+						<p>Nicole is</p>
+					</div>
+					<div id="bio_2">
+						<img id="bio_2_photo" src="" />
+						<h1>Rory</h1>
+						<h3>Vice-President</h3>
+						<p>Nicole is  </p>
+					</div>
+					<div id="bio_3">
+						<img id="bio_3_photo" src="" />
+						<h1>Leigh Anne Schriever</h1>
+						<h3>Property Manager</h3>
+						<p>Leigh Anne is a sophomore who plays clarinet in the wind ensemble, as she has
+						since her first semester at Princeton. She plans to major in the Woodrow Wilson School
+						with certificates in American Studies and Contemporary European Politics and Society.
+						Outside the classroom she is also the Vice President of SURGE, an environmental group on
+						campus, and her other interests include old movies, all varieties of music, and watching hockey.</p>
+					</div>
+					<div id="bio_4">
+						<img id="bio_4_photo" src="" />
+						<h1>Nicole Schiavone</h1>
+						<h3>President</h3>
+						<p>Nicole</p>
+					</div>
+					<div id="bio_5">
+						<img id="bio_5_photo" src="" />
+						<h1>Nicole Schiavone</h1>
+						<h3>President</h3>
+						<p>Nicole</p>
+					</div>
+					<div id="bio_6">
+						<img id="bio_6_photo" src="" />
+						<h1>Nicole Schiavone</h1>
+						<h3>President</h3>
+						<p>Nicole</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="footer">
+
+			</div>
+		</section>
+
+      <!--  <script type="text/javascript">
+       		$(document).ready(function() {
+	       		$(window).resize(function() {	
+	       			if ($(window).width() < 1020) {
+	       				var newWidth = $(window).width() - 50 + 'px';
+	       				$('#page').css('width', newWidth);
+	       			}
+	       		});  				
+			}); 
+        </script> (This script isn't necessary anymore because of media queries --> 
+
+        <script>	// Soundcloud widget toggling
+
+        	$(document).ready(function() {
+        		var iframeElement = document.querySelector('iframe');
+        		var widget = SC.Widget(iframeElement);
+        		var playing = 0;
+        		$('#pirates').mouseover(function() {
+        			if (playing === 0) {
+        				widget.play();
+        				playing = 1;
+        				$('#pirates').css('-webkit-filter', 'grayscale(0)');
+        				$('#pirates').css('height', '150');
+        				$('#pirates').css('width', '150');
+        				$('#pirates').css('box-shadow', '0 0 50px #F67F25');
+        				$('#pirates').css('margin-left', '-75px');
+        				$('#pirates').css('margin-top', '-75px');
+
+        			} else {
+        				widget.pause();
+        				playing = 0;
+        				$('#pirates').css("-webkit-filter", "grayscale(1)");
+        				$('#pirates').css('height', '100');
+        				$('#pirates').css('width', '100');
+        				$('#pirates').css('box-shadow', '0 0 25px #F67F25');
+        				$('#pirates').css('margin-left', '-50px');
+        				$('#pirates').css('margin-top', '-50px');
+        			}
+        		});
+
+        	});
+        </script>
+
+        <!-- Photo Booth Script
+        <script>
+
+        </script>
+	</body>
+</html>

@@ -1,0 +1,146 @@
+#page {
+	background-color: #FFFFFF;
+	background-size: cover;
+	min-height: 1000px;
+	position: relative;
+	margin: 40px auto;
+	padding-top: 20px;
+}
+
+#title {
+	padding-left: 45px;
+	font-size: 33px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#title, #title a:link, #title a:visited, #title a:hover, #title a:active {
+	text-decoration: none;
+	font-family: "EB Garamond", Garamond, serif;
+	font-weight: 300;
+	color: #3A3A3A; /* dark slate gray */
+} 
+
+#title_description {
+	margin-top: 0;
+	padding-left: 50px;
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 40px;
+	color: #3A3A3A;
+}
+
+body {
+	background-color: #F67F25; /* dark orange, beta website uses #de7008, which is chocolate */
+	background-size: cover;
+
+	height: 100%;
+}
+
+#main {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+/* From hereon is the CSS for the animated icons that stream from soundcloud */
+
+#iconholder {
+	height: 500px;
+	width: 90%;
+	position: relative;
+	margin: 20px auto;
+}
+
+#pirates, #american_elegy, #american_in_paris, #lotr, #star_wars {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	transition: all 1s ease;
+	-webkit-filter: grayscale(100%);
+
+	height: 100px;
+	width: 100px;
+	margin-top: -50px;
+	margin-left: -50px;
+
+	border-radius: 50%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
+}
+
+
+#pirates_box, #american_elegy_box, #american_in_paris_box, #lotr_box, #star_wars_box {
+	width: 200px;
+	height: 200px;
+	position: relative;	/* Absolute position causes the inline-block to fail, but relative position makes the iframe containing divs to move down */
+	display: inline-block;
+	margin: 10px 10px;
+}
+
+/* From hereon is the CSS for the biographies */
+
+#bio_header {
+	position: relative;
+	height: 400px;
+	width: 90%;
+	margin: 20px auto;
+}
+
+#bio_header img:nth-child(2), #bio_header img:nth-child(3), #bio_header img:nth-child(4) {
+	position: relative;
+	display: inline-block;
+	height: 100px;
+	width: 70px;
+	margin: 10px 10px;
+}
+
+#bio_header img:nth-child(5), #bio_header img:nth-child(6), #bio_header img:nth-child(7) {
+	position: relative;
+	display: inline-block;
+	left: 350px;
+	height: 100px;
+	width: 70px;
+	margin: 10px 10px;
+}
+
+#big_photo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	background: url(images/pirates_icon.jpg) 50%;
+	background-size: cover;
+
+	height: 350px;
+	width: 245px;
+	margin-top: -200px;
+	margin-left: -140px;
+
+	-webkit-transition: all 0.5s ease;
+}
+
+#bio_box {
+	height: 500px;
+	width: 90%;
+	position: relative;
+	margin: 20px auto;
+}
+
+
+#bio_1, #bio_2, #bio_3, #bio_4, #bio_5, #bio_6 {
+	display: inline-block;
+	height: 500px;
+	position: absolute;
+	-webkit-transition: all 1s ease;
+	margin-top
+}
+
+#bio_box div h1, #bio_box div h3,  #bio_box div p {
+	opacity: 0;
+}
