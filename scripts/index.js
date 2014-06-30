@@ -7,9 +7,13 @@
 	for (var i = 0; i < homeElems.length; i++) {
 		homeElems[i].style.height = viewportHeight + 'px';
 	}
-	var homeTallElems = document.getElementsByClassName('home-page-tall');
-	for (var i = 0; i < homeTallElems.length; i++) {
-		homeTallElems[i].style.height = viewportHeight*2 + 'px';
+	var tallElems = document.getElementsByClassName('tall');
+	for (var i = 0; i < tallElems.length; i++) {
+		tallElems[i].style.height = tallElems[i].style.height.slice(0, -2) * 2 + 'px';
+	}
+	var veryTallElems = document.getElementsByClassName('very-tall');
+	for (var i = 0; i < veryTallElems.length; i++) {
+		veryTallElems[i].style.height = veryTallElems[i].style.height.slice(0, -2) * 3 + 'px';
 	}
 }());
 

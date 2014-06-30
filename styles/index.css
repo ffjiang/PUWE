@@ -12,9 +12,8 @@ body {
 	width: 100%;
 }
 
-#page-top .bcg {
-	background: none;
-	background-color: #F67F25; /* dark orange */
+#home-top .bcg {
+	background-image: url('../images/whole_ensemble.jpg');
 }
 
 .hs-container {
@@ -65,15 +64,36 @@ body {
 	position: relative;
 }
 
-#page-first .bcg {
+#home-signup {
+	height: 300px;
+}
+
+#home-signup .bcg {
+	background: none;
+	background-color: #F67F25; /* dark orange */
+}
+
+#home-first .bcg {
+	background-color: black;
 	background-image: url('../images/CUS2011.jpg');
 }
 
-#page-second .bcg {
-	background-image: url('../images/whole_ensemble.jpg');
+.fixed-text {
+	position: fixed;
+	top: 206px;
+	width: 100%;
+	left: 0;
 }
 
-#page-third .bcg {
+.fixed-text-2 {
+	top: 75%;
+}
+
+#home-second .bcg {
+	background-image: url('../images/EnsemblePhoto.jpg');
+}
+
+#home-third .bcg {
 	background-image: url('../images/columbia.jpg');
 }
 
@@ -81,6 +101,7 @@ body {
 	width: 100%;
 	height: 100%;
 	position: relative;
+	color: #ebebeb;
 }
 
 .curtain-container .curtain {
@@ -88,7 +109,6 @@ body {
 	height: 1px;
 	background-color: #000000;
 	position: absolute;
-	top: 25%;
 	left: 0;
 	opacity: 0;
 }
@@ -99,4 +119,27 @@ body {
 	left: 0;
 	width: 100%;
 	text-align: center;
+}
+
+#home-footer {
+	color: #ebebeb;
+}
+
+#home-footer .bcg {
+	background-image: url('../images/waterfall.jpg');
+	z-index: 1;
+}
+
+#home-footer .bcg2 {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+
+	background-image: url('../images/blurred_waterfall.jpg');
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
 }
