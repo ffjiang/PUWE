@@ -16,10 +16,18 @@
 	</head>
 
 	<body>
+		<section id="nav-bar"
+				data-center-bottom="top: -48px;"
+				data-200-top-bottom="top: 0;"
+				data-anchor-target="#home-top"
+		>
+			<div></div>
+		</section>
+
 		<section id="home-top" class="home-page"> <!-- contains the home screen content --> 
 			<div class="bcg"
-					data-center="background-position: 50% 0px;"
-					data-top-bottom="background-position: 50% -100px;"
+					data-center="background-position: 50% -100px;"
+					data-top-bottom="background-position: 50% -200px;"
 					data-anchor-target="#home-top"
 			>
 				<div class="hs-container">
@@ -29,6 +37,17 @@
 								data-10-top="opacity: 1;"
 								data-anchor-target="#title-link"
 						>
+							<div class="top-bar">
+								<div class="top-bar-item">
+									PUWE
+								</div>
+								<div class="top-bar-item">
+									Current Season - Music - History - Biographies
+								</div>
+								<div class="top-bar-item">
+									Join PUWE!
+								</div>
+							</div>
 							<h1 class="title"><a id="title-link" href="http://www.princeton.edu/~puwe/alpha/index.html" title="Princeton University Wind Ensemble" rel="index">Princeton University Wind Ensemble</a></h1>
 							<h2 class="title_description">Robert Gravener, Conductor</h2>
 						</div>
@@ -138,25 +157,27 @@
 			</div>
 		</section>
 
+<!--
 		<section id="home-footer" class="home-page very-tall">
 			<div class="bcg">
-			</div>
-			<div class="bcg2"
-					data-100-bottom="opacity: 0;"
-					data-bottom="opacity: 1;"
-        	data-anchor-target="#home-footer"
-    	>
-        <div class="hs-container">
-           <div class="hs-content"
-              data-100-bottom="opacity: 0;"
-              data-bottom="opacity: 1;"
-              data-anchor-target="#home-footer"
-          >
-            <h2>In Memory of Rick F. Modica '99</h2>
-          </div>
-        </div>
-      </div>
-		</section>
+				</div>
+				<div class="bcg2"
+						data-100-bottom="opacity: 0;"
+						data-bottom="opacity: 1;"
+	        			data-anchor-target="#home-footer"
+	    		>
+		        <div class="hs-container">
+		            <div class="hs-content"
+		            		data-100-bottom="opacity: 0;"
+		            		data-bottom="opacity: 1;"
+		            		data-anchor-target="#home-footer"
+		          	>
+		            	<h2>In Memory of Rick F. Modica '99</h2>
+		          	</div>
+		        </div>
+		     </div>
+		</section> -->
+		
       <!--  <script type="text/javascript">
        		$(document).ready(function() {
 	       		$(window).resize(function() {	
@@ -207,6 +228,7 @@
         -->
     <script type="text/javascript" src="scripts/jquery.js"></script>
 		<script type="text/javascript" src="scripts/skrollr.js"></script>
+		<script type="text/javascript" src="scripts/util.js"></script>
 		<script type="text/javascript" src="scripts/index.js"></script>
 		<script type="text/javascript" src="scripts/soundcloud.player.api.js"></script>
 
