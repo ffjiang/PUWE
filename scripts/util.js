@@ -3,7 +3,9 @@
 if (typeof Object.create !== 'function') {
 	Object.create = function(o) {
 		var F = function() {};
-		F.prototype = o;
+		if (o !== undefined) {
+			F.prototype = o;
+		}
 		return new F();
 	};
 }
@@ -57,5 +59,16 @@ Number.method('integer', function() {
     	} else {
       		$el.innerText = text;
     	}
+  	};
+
+  	util.findAbsPos = function(obj) {
+    	var left = 0;
+    	var top = 0;
+    	while (obj.offsetParent) {
+      		left += obj.offsetLeft;
+      		top += obj.offsetTop;
+      		obj = obj.offsetParent;
+    	}
+    	return {left: left, top: top};
   	};
 })(window, document);

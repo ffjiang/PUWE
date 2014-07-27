@@ -29,3 +29,14 @@
 		}
 	});
 })(jQuery);
+
+ScrollView = Object.create();
+
+ScrollView.prototype.render = function() {
+	var i;
+	var viewportHeight = Math.max(document.documentElement.clientHeight,
+					window.innerHeight || 0);
+	this._$homePageViews = document.getElementsByClassName('home-page');
+
+	// Ensure the nav bar words are lowered properly
+};
