@@ -45,6 +45,12 @@ Number.method('integer', function() {
     	return $el.getElementsByTagName(tagName)[0];
   	};
 
+  	util.extendClass = function($el, className) {
+  		if (className) {
+  			$el.className += ' ' + className;
+  		}
+  	};
+
   	util.getText = function($el) {
   		return $el.textContent || $el.innerText || '';
   	};
@@ -55,6 +61,10 @@ Number.method('integer', function() {
     	} else {
       		$el.innerText = text;
     	}
+  	};
+
+  	util.setHTML = function($el, html) {
+  		$el.innerHTML = html;
   	};
 
   	util.findAbsPos = function(obj) {
