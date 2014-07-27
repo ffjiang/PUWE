@@ -1,52 +1,14 @@
 ScrollView = function(panels) {
-	this._$panels = panels;
+	this._panels = panels;
+	this._navBar = new NavBar();
 };
 
-ScrollView.Endpoints = {
-	HOME: 'PUWE',
-	CURRENT_SEASON: 'Current Season',
-	MUSIC: 'Music',
-	HISTORY: 'History',
-	BIO: 'Biographies',
-	JOIN: 'Join PUWE'
-};
 
-// Replace this with the full HTML of the page
-ScrollView.PageContent = {
-	HOME: 'PUWE',
-	CURRENT_SEASON: 'Current Season',
-	MUSIC: 'Music',
-	HISTORY: 'History',
-	BIO: 'Biographies',
-	JOIN: 'Join PUWE!'
-};
 
 ScrollView.prototype.render = function() {
 	var i;
 
-	// Set up the navigation bar.
-	var navBarItems = [ScrollView.PageContent.HOME,
-					   ScrollView.PageContent.CURRENT_SEASON,
-					   ScrollView.PageContent.MUSIC,
-					   ScrollView.PageContent.HISTORY,
-					   ScrollView.PageContent.BIO,
-					   ScrollView.PageContent.JOIN];
-	this._$navBar = document.getElementById('nav-bar');
-	for (i = 0; i < navBarItems.length; i++) {
-		var $el = util.create('<div class="nav-bar-item"><span>' + 
-			navBarItems[i] + '</span></div>');
-		if (i === 0) {
-			util.extendClass($el, 'left');
-		} else if (i === navBarItems.length - 1) {
-			util.extendClass($el, 'right');
-		} else if (i > 1) {
-			var $dash = util.create('<div class="nav-bar-item"><span>-</span></div>');
-			this._$navBar.appendChild($dash);
-		}
-		$el.onclick = this.handleNavClick.bind(this);
-		this._$navBar.appendChild($el);
-	}
-
+	this._navBar.render();
 	this._$content = document.getElementById('content');
 	this._$homePanels = document.getElementsByClassName('home-page');
 	this._$homeTallPanels = document.getElementsByClassName('tall');
@@ -80,31 +42,6 @@ ScrollView.prototype.render = function() {
 	})(jQuery);
 };
 
-ScrollView.prototype.handleNavClick = function(e) {
-	this.showPage(util.getText(e.target));
-};
-
-ScrollView.prototype.showPage = function(endpoint) {
-	console.log(ScrollView.Endpoints);
-	switch (endpoint) {
-		case ScrollView.Endpoints.HOME:
-			util.setHTML(this._$content, ScrollView.PageContent.HOME);
-			break;
-		case ScrollView.Endpoints.CURRENT_SEASON:
-			util.setHTML(this._$content, ScrollView.PageContent.CURRENT_SEASON);
-			break;
-		case ScrollView.Endpoints.MUSIC:
-			util.setHTML(this._$content, ScrollView.PageContent.MUSIC);
-			break;
-		case ScrollView.Endpoints.BIO:
-			util.setHTML(this._$content, ScrollView.PageContent.BIO);
-			break;
-		case ScrollView.Endpoints.JOIN:
-			util.setHTML(this._$content, ScrollView.PageContent.JOIN);
-			break;
-	}
-};
-
 Panel = function() {};
 
 // Execute the website
@@ -114,5 +51,10 @@ Panel = function() {};
 
 	var scrollView = new ScrollView(panels);
 	scrollView.render();
+
+	$('a[href="#top"]').click(function() {
+  		$('html, body').animate({ scrollTop: 0 }, 'slow');
+  		return false;
+	});
 })();
 
