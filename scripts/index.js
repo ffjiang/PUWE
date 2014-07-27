@@ -1,6 +1,6 @@
 ScrollView = function(panels) {
 	this._panels = panels;
-	this._navBar = new NavBar();
+	this._navBar = new NavBar('#home-top');
 };
 
 
@@ -15,7 +15,7 @@ ScrollView.prototype.render = function() {
 	this._$homeVeryTallPanels = document.getElementsByClassName('very-tall');
 
 	// Calculate the viewport height and set appropriate height for each slide
-	var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	var viewportHeight = util.viewportHeight();
 	for (i = 0; i < this._$homePanels.length; i++) {
 		this._$homePanels[i].style.height = viewportHeight + 'px';
 	}

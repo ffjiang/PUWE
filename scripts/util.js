@@ -77,4 +77,9 @@ Number.method('integer', function() {
     	}
     	return {left: left, top: top};
   	};
+
+    // Returns viewport height as a number.
+    util.viewportHeight = function() {
+      return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    };
 })(window, document);
