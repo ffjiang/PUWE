@@ -1,15 +1,5 @@
 /* Global helper functions. */
 
-if (typeof Object.create !== 'function') {
-	Object.create = function(o) {
-		var F = function() {};
-		if (o !== undefined) {
-			F.prototype = o;
-		}
-		return new F();
-	};
-}
-
 Function.prototype.method = function(name, func) {
 	if (!this.prototype[name]) {
 		Function.prototype[name] = func;
@@ -31,6 +21,12 @@ Number.method('integer', function() {
 			typeof value.length === 'number' &&
 			typeof value.splice === 'function' &&
 			!(value.propertyIsEnumerable('length'));
+	};
+
+	var $div = document.createElement('div');
+	util.create = function(htmlString) {
+		$div.innerHTML = htmlString;
+		return $div.firstChild;
 	};
 
 	util.getByClass = function($el, className) {
