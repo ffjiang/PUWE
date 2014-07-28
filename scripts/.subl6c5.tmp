@@ -1,0 +1,49 @@
+HistoryView = function() {
+	this._navBar = new NavBar('#timelineContainer');
+};
+
+HistoryView.prototype.render = function() {
+	this._navBar.render();
+	this._$timelineContainer = document.getElementById('timelineContainer');
+	this._$timelineContainer.style.minHeight = util.viewportHeight() + 'px';
+};
+
+(function() {
+	var historyView = new HistoryView();
+	historyView.render();
+
+	// Animate the expanding and collapsing of the events
+	// as the user scrolls.
+	$(document).ready(function() {
+		var dt = document.getElementsByClassName('dt');
+		var anchors = [];
+		for (var i = 0; i < dt.length; i++) {
+			var anchor = util.getByTag(dt[i], 'a');
+			if (anchor) {
+				anchors.push(anchor);
+			}
+		}
+		$(window).scroll(function() {
+			for (var i = 0; i < anchors.length; i++) {
+				if (util.isOnScreen(document.getElementById)) {
+
+				}
+			}
+		});
+	});
+
+	// Timeline effect
+	$.timeliner({startState: 'open'});
+
+	// Parallax Effect
+	(function($) {
+		// Init Skrollr
+		var s = skrollr.init({
+			forceHeight: true, // Set to false to eliminate excess whitespace
+			render: function(data) {
+				// Debugging - Log the current scroll position.
+				// console.log(data.curTop);
+			}
+		});
+	})(jQuery);
+})();
