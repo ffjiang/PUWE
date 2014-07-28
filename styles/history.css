@@ -32,3 +32,8 @@ body {
 	display: block;
 	overflow: auto;
 }
+
+dd p, dt a {
+	font-family: 'DINWeb', Helvetica, sans-serif;
+	font-weight: normal;
+}

@@ -1,4 +1,12 @@
 body {
 	margin: 0;
 	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+@font-face{
+	font-family: 'DINWeb';
+	src: url('../fonts/DINWebPro-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }

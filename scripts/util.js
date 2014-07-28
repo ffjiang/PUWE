@@ -82,4 +82,41 @@ Number.method('integer', function() {
     util.viewportHeight = function() {
       return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     };
+
+    /*
+     * @param {Element} $el
+     * @param {!Number} wiggleRoom Percentage of window height (in coefficient form) 
+     * added on when checking if an element is on screen.
+     * @return {Boolean}
+     */
+    util.isOnScreen = function($el, wiggleRoom) {
+        var rect = $el.getBoundingClientRect();
+        var height = window.innerHeight || document.documentElement.clientHeight;
+        var wiggle = wiggleRoom * height || 0;
+        return rect.bottom >= -wiggle && rect.top <= height + wiggle;
+    };
+
+    // Fix this janky comment
+    /*
+     * Same as inOnScreen but only checks the top.
+     * Meant to be used in cases where an element's top position is already
+     * known and they will only be hidden before the page scrolls down
+     * past them.
+     *
+     * @param {Number} top
+     * @return {Boolean}
+     */
+    util.isAboveScreen = function($el, wriggleRoom) {
+        var rect = $el.getBoundingClientRect();
+        var height = window.innerHeight || document.documentElement.clientHeight;
+        var wriggle = wriggleRoom * height || 0;
+        return rect.bottom < -wriggle;
+    };
+
+    util.isBelowScreen = function($el, wriggleRoom) {
+        var rect = $el.getBoundingClientRect();
+        var height = window.innerHeight || document.documentElement.clientHeight;
+        var wriggle = wriggleRoom * height || 0;
+        return rect.top > height + wriggle;
+    };
 })(window, document);

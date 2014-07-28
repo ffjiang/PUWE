@@ -8,12 +8,45 @@ HistoryView.prototype.render = function() {
 	this._$timelineContainer.style.minHeight = util.viewportHeight() + 'px';
 };
 
-(function() {
+(function($) {
 	var historyView = new HistoryView();
 	historyView.render();
 
+	// Animate the expanding and collapsing of the events
+	// as the user scrolls.
+	$(document).ready(function() {
+		var i;
+
+		document.body.scrollTop = 0;
+		
+		var dt = document.getElementsByTagName('dt');
+		var anchors = [];
+		for (i = 0; i < dt.length; i++) {
+			var anchor = util.getByTag(dt[i], 'a');
+			if (anchor) {
+				anchors.push(anchor);
+			}
+		}
+		
+		var throttled = false;
+		$(window).scroll(function() {
+			if (!throttled) {
+				throttled = true;
+				for (var i = 0; i < anchors.length; i++) {
+					var expanded = $(anchors[i]).hasClass('open');
+					if (util.isOnScreen(anchors[i], -0.05) && !expanded) {
+						anchors[i].click();
+					}
+				}
+				throttled = false;
+			}
+		});
+	});
+
 	// Timeline effect
-	$.timeliner({startState: 'open'});
+	// If startOpen array is changed, remember to update the code above
+	// which sets their 'expanded' bool to true.
+	$.timeliner({startOpen: ['#foundingEX', '#tragedyEX']});
 
 	// Parallax Effect
 	(function($) {
@@ -25,5 +58,5 @@ HistoryView.prototype.render = function() {
 				// console.log(data.curTop);
 			}
 		});
-	})(jQuery);
-})();
+	})($);
+})(jQuery);
