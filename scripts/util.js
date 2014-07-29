@@ -119,4 +119,15 @@ Number.method('integer', function() {
         var wriggle = wriggleRoom * height || 0;
         return rect.top > height + wriggle;
     };
+
+    // Supposedly inserts style rules for pseudoelements.
+    util.addStyleRule = (function(style) {
+        var sheet = document.head.appendChild(style).sheet;
+        return function(selector, css) {
+            var propText = Object.keys(css).map(function(p) {
+                return p + ":" + css[p];
+            }).join(";");
+            sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+        };
+    })(document.createElement("style"));
 })(window, document);

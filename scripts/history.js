@@ -1,5 +1,5 @@
 HistoryView = function() {
-	this._navBar = new NavBar('#timelineContainer');
+	this._navBar = new NavBar('#timelineContainer', NavBar.Endpoints.HISTORY);
 };
 
 HistoryView.prototype.render = function() {
@@ -15,38 +15,44 @@ HistoryView.prototype.render = function() {
 	// Animate the expanding and collapsing of the events
 	// as the user scrolls.
 	$(document).ready(function() {
-		var i;
+		// Timeline effect
+		// If startOpen array is changed, remember to update the code above
+		// which sets their 'expanded' bool to true.
+		$.timeliner({startOpen: ['#foundingEX', '#tragedyEX']});
 
-		document.body.scrollTop = 0;
-		
 		var dt = document.getElementsByTagName('dt');
 		var anchors = [];
-		for (i = 0; i < dt.length; i++) {
+		for (var i = 0; i < dt.length; i++) {
 			var anchor = util.getByTag(dt[i], 'a');
 			if (anchor) {
 				anchors.push(anchor);
 			}
 		}
-		
-		var throttled = false;
-		$(window).scroll(function() {
-			if (!throttled) {
-				throttled = true;
-				for (var i = 0; i < anchors.length; i++) {
-					var expanded = $(anchors[i]).hasClass('open');
-					if (util.isOnScreen(anchors[i], -0.05) && !expanded) {
-						anchors[i].click();
+		setTimeout(function() {
+			var i;
+			for (i = 0; i < anchors.length; i++) {
+				$(anchors[i]).waypoint({
+					handler: (function(j) {
+						return function(direction) {
+							var expanded = $(anchors[j]).hasClass('open');
+							if (direction === 'down' && !expanded) {
+								// Expand
+								anchors[j].click();
+								console.log('expand');
+							} else if (direction === 'up' && expanded) {
+								// Collapse
+								anchors[j].click();
+								console.log('collapse');
+							}
+						}
+					})(i),
+					offset: function() {
+						return $.waypoints('viewportHeight') - 50;
 					}
-				}
-				throttled = false;
+				});
 			}
-		});
+		}, 1500);
 	});
-
-	// Timeline effect
-	// If startOpen array is changed, remember to update the code above
-	// which sets their 'expanded' bool to true.
-	$.timeliner({startOpen: ['#foundingEX', '#tragedyEX']});
 
 	// Parallax Effect
 	(function($) {

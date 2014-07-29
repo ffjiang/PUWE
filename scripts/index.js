@@ -1,6 +1,6 @@
 ScrollView = function(panels) {
 	this._panels = panels;
-	this._navBar = new NavBar('#home-top');
+	this._navBar = new NavBar('#home-top', NavBar.Endpoints.HOME);
 };
 
 
