@@ -29,6 +29,13 @@ body {
 	padding: 5px 5px 5px;
 }
 
+#img-container {
+	position: absolute;
+	right: 10%;
+	top: 180px;
+	box-shadow: 3px 3px 3px #ccc;
+}
+
 #timelineContainer {
 	font-size: 65%;
 	display: block;
