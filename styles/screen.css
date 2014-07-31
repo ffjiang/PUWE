@@ -36,6 +36,7 @@ p {
 	border-left:2px solid #F67F25;
 	margin:20px auto;
 	width:900px;
+	z-index: 1;
 }
 
 div.timelineToggle {

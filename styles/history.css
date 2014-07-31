@@ -42,29 +42,105 @@ dd p, dt a {
 
 /* Images on the right of the page. */
 #img-container {
-	position: absolute;
-	right: 10%;
-	top: 180px;
-	min-height: 500px;
+	position: fixed;
+	right: 0;
+	top: 23%;
+	height: 300px;
+	width: 500px;
+	z-index: 10;
 }
 
 #img-container div {
 	position: absolute;
+	left: 0;
 	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto;
+	box-shadow: 3px 3px 3px #ccc;
+	z-index: 2;
 }
 
 #concertphoto {
-	box-shadow: 3px 3px 3px #ccc;
 	width: 310px;
 	height: 179px;
+	opacity: 1;
+
+	-webkit-transition: -webkit-transform 1s ease-in-out,
+						 opacity 1s ease-in-out;
+	-moz-transition: -moz-transform 1s ease-in-out,
+					  opacity 1s ease-in-out;
+	-o-transition: -o-transform 1s ease-in-out,
+					opacity 1s ease-in-out;
+	-ms-transition: -ms-transform 1s ease-in-out,
+					 opacity 1s ease-in-out;
+	transition: transform 1s ease-in-out,
+				opacity 1s ease-in-out;
+}
+
+#concertphoto:hover {
+	opacity: 0;
+
+
+	-webkit-transform: translateX(-150px)
+					   scale(0.9, 0.9);
+	-moz-transform: translateX(-150px)
+				    scale(0.9, 0.9);
+	-o-transoform: translateX(-150px)
+				   scale(0.9, 0.9);
+	-ms-transform: translateX(-150px)
+				   scale(0.9, 0.9);
+	transform: translateX(-150px)
+				scale(0.9, 0.9);
 }
 
 #inmemory {
-	top: 250px;
+	display: none;
+	width: 348px;
+	height: 40px;
 }
 
 #festivalofwinds {
-	top: 350px;
+	width: 350px;
+	height: 186px;
+	opacity: 0;
+
+	-webkit-transform: translateX(150px)
+					   scale(0.9, 0.9);
+	-moz-transform: translateX(150px)
+				    scale(0.9, 0.9);
+	-o-transoform: translateX(150px)
+				   scale(0.9, 0.9);
+	-ms-transform: translateX(150px)
+				   scale(0.9, 0.9);
+	transform: translateX(150px)
+				scale(0.9, 0.9);
+
+	-webkit-transition: -webkit-transform 1s ease-in-out,
+						 opacity 1s ease-in-out;
+	-moz-transition: -moz-transform 1s ease-in-out,
+					  opacity 1s ease-in-out;
+	-o-transition: -o-transform 1s ease-in-out,
+					opacity 1s ease-in-out;
+	-ms-transition: -ms-transform 1s ease-in-out,
+					 opacity 1s ease-in-out;
+	transition: transform 1s ease-in-out,
+				opacity 1s ease-in-out;
+}
+
+#festivalofwinds:hover {
+	opacity: 1;
+
+	-webkit-transform: translateX(0)
+					   scale(1, 1);
+	-moz-transform: translateX(0)
+				    scale(1, 1);
+	-o-transoform: translateX(0)
+				   scale(1, 1);
+	-ms-transform: translateX(0)
+				   scale(1, 1);
+	transform: translateX(0)
+				scale(1, 1);
 }
 
 #festivalofwinds img {
