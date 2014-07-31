@@ -39,9 +39,9 @@ p {
 }
 
 div.timelineToggle {
-	float:right;
-	margin-right:0;
-	white-space:nowrap;
+	float: right;
+	margin-right: 50px;
+	white-space: nowrap;
 }
 
 a.expandAll {

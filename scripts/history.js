@@ -19,7 +19,7 @@ HistoryView.prototype.render = function() {
 		// If startOpen array is changed, remember to update the code above
 		// which sets their 'expanded' bool to true.
 		$.timeliner({startOpen: ['#foundingEX', '#tragedyEX']});
-
+/*
 		var dt = document.getElementsByTagName('dt');
 		var anchors = [];
 		for (var i = 0; i < dt.length; i++) {
@@ -51,7 +51,7 @@ HistoryView.prototype.render = function() {
 					}
 				});
 			}
-		}, 1500);
+		}, 1500); */
 	});
 
 	// Parallax Effect

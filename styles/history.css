@@ -29,13 +29,6 @@ body {
 	padding: 5px 5px 5px;
 }
 
-#img-container {
-	position: absolute;
-	right: 10%;
-	top: 180px;
-	box-shadow: 3px 3px 3px #ccc;
-}
-
 #timelineContainer {
 	font-size: 65%;
 	display: block;
@@ -45,4 +38,36 @@ body {
 dd p, dt a {
 	font-family: 'DINWeb', Helvetica, sans-serif;
 	font-weight: normal;
+}
+
+/* Images on the right of the page. */
+#img-container {
+	position: absolute;
+	right: 10%;
+	top: 180px;
+	min-height: 500px;
+}
+
+#img-container div {
+	position: absolute;
+	right: 0;
+}
+
+#concertphoto {
+	box-shadow: 3px 3px 3px #ccc;
+	width: 310px;
+	height: 179px;
+}
+
+#inmemory {
+	top: 250px;
+}
+
+#festivalofwinds {
+	top: 350px;
+}
+
+#festivalofwinds img {
+	width: 350px;
+	height: 186px;
 }
